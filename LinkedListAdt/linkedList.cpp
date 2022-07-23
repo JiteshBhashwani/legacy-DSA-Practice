@@ -11,7 +11,8 @@ bool linkedList::isFUll()
     delete temp;
     return flag;
 }
-void linkedList::push(int x)
+
+void linkedList::push(node x)
 {
     if (size == 0)
     {
@@ -20,9 +21,9 @@ void linkedList::push(int x)
     }
     else
     {
-        node* newNode = new node(x);
+        node* newNode = new node(x.data);
         newNode->next = first;
-        first = newNode;   
+        first = newNode;  
     }
         size++;
 }

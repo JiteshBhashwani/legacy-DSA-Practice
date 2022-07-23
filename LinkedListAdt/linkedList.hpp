@@ -17,7 +17,7 @@ public:
     ~linkedList();
     bool isEmpty();
     bool isFUll();
-    void push(int x);
+    void push(node x);
     int pop();
     void display();
 };

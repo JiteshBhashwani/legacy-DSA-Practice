@@ -23,12 +23,15 @@ int main()
 		{
 		case 0: break;
 		case 1:
-			int x; std::cin >> x;
-			if(!q.isFUll()) std::cout << x << " added" << std::endl;
-			q.push(x);
+			{int x; std::cin >> x;
+			// if(!q.isFUll()) std::cout << x << " added" << std::endl;
+			// q.push(x);
+			// node new_node(x);
+			// q.push(new_node);}
+			q.push(x);}
 			break;
 		case 2:
-			std::cout << q.pop() << "dequed from queue" << std::endl;  
+			std::cout << q.pop() << " dequed from queue" << std::endl;  
 			break;
 		case 3:
 			std::cout << (q.isEmpty() ? "empty" : "not empty") << std::endl;
