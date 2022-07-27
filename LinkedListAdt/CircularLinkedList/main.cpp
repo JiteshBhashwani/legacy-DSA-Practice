@@ -159,10 +159,15 @@ void LinkedList::insert(int x,int index)
 }
 void LinkedList::clear()
 {
-    while(size)
+    node* deadEnd = new node(0);
+    last->next = deadEnd;
+    while (first != deadEnd)
     {
-        this->pop_back();
+        node* del = first;
+        first = first->next;
+        delete del;
     }
+    size=0;
     size=0;
 }
 LinkedList::~LinkedList()
