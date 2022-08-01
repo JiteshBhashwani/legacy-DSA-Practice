@@ -10,6 +10,7 @@ void menu()
     std::cout << "press 5: insert(element,index)\n";
     std::cout << "press 6: remove(index)\n";
     std::cout << "press 7: clear list\n";
+    std::cout << "press 8: reverse list\n";
 }
 
 int main() 
@@ -51,6 +52,9 @@ int main()
         case 7:
             q.clear();
             break;
+		case 8:
+			q.reverse();
+			break;
 		default:
 			break;
 		}

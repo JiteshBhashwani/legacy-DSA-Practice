@@ -185,7 +185,21 @@ void LinkedList::remove(int index)
         _size--;
     }
 }
-
+void LinkedList::reverse()
+{
+    if(empty()){return;}
+    node* itr = first;
+    node* hold = first->next;
+    first->next = nullptr;
+    while (hold)
+    {
+        node *temp = hold->next;
+        hold->next = itr;
+        itr = hold;
+        hold = temp;
+    }
+    first = itr;
+}
 std::ostream& operator<<(std::ostream& os,const LinkedList& that)
 {
     node* it = that.first;
