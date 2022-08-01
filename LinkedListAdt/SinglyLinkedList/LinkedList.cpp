@@ -82,19 +82,17 @@ int LinkedList::pop_back()
         first = last = NULL;
         _size--;
     }
-    
     else
     {
-        node *temp1 = NULL;
-        node *temp2 = first;
-        while (temp2->next)
+        popped = last->data;
+        node* temp = first;
+        while (temp->next != last)
         {
-            temp1 = temp2;
-            temp2 = temp2->next;
+            temp = temp->next;
         }
-        popped = temp2->data;
-        temp1->next = NULL;
-        delete temp2;
+        delete last;
+        last = temp;
+        last->next = NULL;
         _size--;
     }
     return popped;
