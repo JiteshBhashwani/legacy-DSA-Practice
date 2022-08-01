@@ -82,19 +82,17 @@ int LinkedList::pop_back()
         first = last = NULL;
         _size--;
     }
-    
     else
     {
-        node *temp1 = NULL;
-        node *temp2 = first;
-        while (temp2->next)
+        popped = last->data;
+        node* temp = first;
+        while (temp->next != last)
         {
-            temp1 = temp2;
-            temp2 = temp2->next;
+            temp = temp->next;
         }
-        popped = temp2->data;
-        temp1->next = NULL;
-        delete temp2;
+        delete last;
+        last = temp;
+        last->next = NULL;
         _size--;
     }
     return popped;
@@ -187,7 +185,21 @@ void LinkedList::remove(int index)
         _size--;
     }
 }
-
+void LinkedList::reverse()
+{
+    if(empty()){return;}
+    node* itr = first;
+    node* hold = first->next;
+    first->next = nullptr;
+    while (hold)
+    {
+        node *temp = hold->next;
+        hold->next = itr;
+        itr = hold;
+        hold = temp;
+    }
+    first = itr;
+}
 std::ostream& operator<<(std::ostream& os,const LinkedList& that)
 {
     node* it = that.first;

@@ -27,6 +27,7 @@ public:
     void push_back(int x);
     void push_front(int x);
     void remove(int index);
+    void reverse();
     int size(){return this->_size;}
 //operator overloading
 friend std::ostream& operator<<(std::ostream& os,const LinkedList& that);
